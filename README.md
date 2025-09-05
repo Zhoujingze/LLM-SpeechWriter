@@ -8,6 +8,8 @@ LLM-SpeechWriter 是一个用于自动生成演讲稿的 Web 应用，支持本�
 ```
 speechwriter/
 ├── app.py                # 主应用入口，Flask Web 服务
+├── api/
+│   └── local_llm.py      # 实际的LLM集成
 ├── config/
 │   └── .env              # 环境变量配置文件
 ├── data/
