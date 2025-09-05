@@ -1,0 +1,342 @@
+:root {
+  --primary: rgba(255, 228, 240, 0.9); /* 粉色 */
+  --secondary: rgba(220, 240, 255, 0.9); /* 浅蓝色 */
+  --text-gradient: linear-gradient(135deg, #FF9EC4, #8AC6F4); /* 三丽欧风格粉蓝渐变 */
+}
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, var(--primary), var(--secondary)), 
+              url('/static/images/bg-pattern.mp4'); /* 添加背景图案 */
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: calc(var(--font-base) * var(--golden-ratio));
+  line-height: 1.8; /* 中文最佳行高 */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.form-container {
+    width: 50%;
+    max-width: 500px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.7); /* 增加透明度 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 半透明边框 */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 20px;
+}
+
+.output-container {
+    width: 50%;
+    max-width: 500px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.7); /* 增加透明度 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 半透明边框 */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  order: -1; /* 将标签移到最前面 */
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 24px;
+  border-radius: 50px; /* 更大的圆角 */
+}
+
+.form-container {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+input, select, textarea {
+  width: 100%;
+  height: 48px;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fff;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: vertical;
+  transition: all 0.3s ease;
+  background: #fff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  color: #8AC6F4; /* 三丽欧蓝色 */
+  background-color: rgba(255, 228, 240, 0.3); /* 浅粉色背景 */
+  border: 1px solid #FF9EC4; /* 粉色边框 */
+}
+
+input:focus, textarea:focus {
+    border-color: #8AC6F4; /* 聚焦时蓝色边框 */
+    box-shadow: 0 0 0 2px rgba(138, 198, 244, 0.3);
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 158, 196, 0.5); /* 半透明粉色占位文字 */
+}
+
+option {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #FF9EC4; /* 三丽欧粉色 */
+}
+
+select:focus {
+  border-color: #FF9EC4;
+  box-shadow: 0 0 0 2px rgba(255, 158, 196, 0.3);
+}
+
+/* 现代化输入框样式 */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #4d90fe;
+  box-shadow: 0 0 0 2px rgba(77, 144, 254, 0.2);
+}
+
+button {
+  background: linear-gradient(to bottom, #4d90fe, #357ae8);
+  color: white;
+  border: none;
+  padding: calc(var(--font-base) * 0.75) calc(var(--font-base) * 1.5);
+  border-radius: calc(var(--font-base) * 0.25);
+  font-size: calc(var(--font-base) * var(--font-scale));
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 按钮层次感设计 */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .form-container, .output-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* 响应式字体 */
+h1 {
+  font-size: calc(var(--font-base) * var(--font-scale) * 2);
+  margin-bottom: calc(var(--font-base) * var(--golden-ratio));
+}
+
+h2 {
+  font-size: calc(var(--font-base) * var(--font-scale) * 1.5);
+}
+
+.output p {
+  margin-bottom: calc(var(--font-base) * var(--golden-ratio) * 0.5);
+  text-align: justify;
+}
+
+.loader {
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bgVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    margin: 0;
+    padding: calc(var(--font-base) * var(--golden-ratio));
+    line-height: 1.8; /* 中文最佳行高 */
+}
+
+.title, .output-title {
+    font-size: calc(var(--font-base) * 3.5); /* 增大到3.5倍基准字体 */
+    text-align: center;
+    margin-bottom: 30px;
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+}
+
+.output p {
+    font-size: calc(var(--font-base) * 2); /* 增大到2倍基准字体 */
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8AC6F4; /* 三丽欧蓝色 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .title, .output-title {
+        font-size: calc(var(--font-base) * 3);
+    }
+    .output p {
+        font-size: calc(var(--font-base) * 1.5);
+    }
+}
+
+/* 响应式字体 */
+h1 {
+  font-size: calc(var(--font-base) * var(--font-scale) * 2);
+  margin-bottom: calc(var(--font-base) * var(--golden-ratio));
+}
+
+h2 {
+  font-size: calc(var(--font-base) * var(--font-scale) * 1.5);
+}
+
+.output p {
+  margin-bottom: calc(var(--font-base) * var(--golden-ratio) * 0.5);
+  text-align: justify;
+}
+
+.loader {
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bgVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    margin: 0;
+    padding: calc(var(--font-base) * var(--golden-ratio));
+    line-height: 1.8; /* 中文最佳行高 */
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 158, 196, 0.3);
+    border-radius: 50%;
+    border-top-color: #FF9EC4;
+    animation: spin 1s ease-in-out infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.form-group label {
+    color: #FF9EC4; /* 三丽欧粉色 */
+    font-weight: 600;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .form-group label {
+        background: linear-gradient(135deg, #8AC6F4, #FF9EC4);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}

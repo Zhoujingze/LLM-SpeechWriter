@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演讲稿生成系统</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <source src="/static/images/bg-pattern.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <h1 class="title">演讲稿生成系统</h1>
+            <form id="speechForm">
+                <div class="form-group">
+                    <label for="speaker">演讲者身份</label>
+                    <input type="text" id="speaker" name="speaker" required placeholder=" ">
+                </div>
+                <div class="form-group">
+                    <label for="occasion">会议类型</label>
+                    <select id="occasion" name="occasion" required>
+                        <option value="business">商务会议</option>
+                        <option value="academic">学术论坛</option>
+                        <option value="wedding">婚礼</option>
+                        <option value="sports">运动会</option>
+                        <option value="graduation">毕业典礼</option>
+                        <option value="conference">行业大会</option>
+                        <option value="award">颁奖典礼</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="speech_type">演讲类型</label>
+                    <select id="speech_type" name="speech_type" required>
+                        <option value="opening">开幕致辞</option>
+                        <option value="keynote">主题演讲</option>
+                        <option value="closing">总结发言</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="theme">演讲主题</label>
+                    <textarea id="theme" name="theme" required placeholder=" "></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>生成演讲稿</span>
+                </button>
+            </form>
+        </div>
+        <div class="output-container">
+            <h2 class="output-title">演讲稿</h2>
+            <div id="speechOutput" class="output"></div>
+            <div id="loader" class="loader"></div>
+        </div>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
